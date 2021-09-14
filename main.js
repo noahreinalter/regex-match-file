@@ -6,17 +6,6 @@ async function run() {
         const path = core.getInput('path')
         console.log(path)
 
-        console.log('Current folder')
-        let files = await fs.readdir('./')
-        for (const file of files)
-            console.log(file);
-        
-
-        console.log('Workspace folder')
-        files = await fs.readdir('/github/workspace/')
-        for (const file of files)
-            console.log(file);
-
         let content = await fs.readFile(path, 'utf8')
 
         const regexPattern = core.getInput('regex_pattern')
