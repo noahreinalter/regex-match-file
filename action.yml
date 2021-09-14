@@ -1,0 +1,16 @@
+name: 'regex match file action'
+description: 'simple provide string.match(regex) action for the content of a file'
+author: 'noahreinalter'
+branding:
+  icon: check
+  color: green
+inputs:
+  regex_pattern:
+    description: 'search regex pattern'
+    required: true
+  path:
+    description: 'path of the file to search'
+    required: true
+runs:
+  using: 'node12'
+  main: 'main.js'
