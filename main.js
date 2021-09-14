@@ -5,7 +5,9 @@ async function run() {
     try {
         const path = core.getInput('path')
         console.log(path)
-        let content = await fs.readFile('/github/workspace/' + path, 'utf8')
+        console.log(fs.readdirSync('./'))
+        console.log(fs.readdirSync('/github/workspace/'))
+        let content = await fs.readFile(path, 'utf8')
 
         const regexPattern = core.getInput('regex_pattern')
         console.log(regexPattern)
