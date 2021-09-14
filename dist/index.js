@@ -588,6 +588,8 @@ async function run() {
 
         if (match == null) {
             core.setFailed('The regex failed to match')
+        } else {
+            console.log('Match found')
         }
     } catch(error) {
         core.setFailed(`Action failed with error ${error}`);
