@@ -12,7 +12,7 @@ async function run() {
         
 
         console.log('Workspace folder')
-        let files = await fs.readdir('/github/workspace/')
+        files = await fs.readdir('/github/workspace/')
         for (const file of files)
             console.log(file);
 
