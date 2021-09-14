@@ -6,13 +6,13 @@ async function run() {
         const path = core.getInput('path')
         console.log(path)
 
-        const files = await fs.readdir('./')
+        let files = await fs.readdir('./')
         for (const file of files)
             console.log(file);
         
 
         console.log('Workspace folder')
-        const files = await fs.readdir('/github/workspace/')
+        let files = await fs.readdir('/github/workspace/')
         for (const file of files)
             console.log(file);
 
