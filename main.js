@@ -6,6 +6,7 @@ async function run() {
         const path = core.getInput('path')
         console.log(path)
 
+        console.log('Current folder')
         let files = await fs.readdir('./')
         for (const file of files)
             console.log(file);
