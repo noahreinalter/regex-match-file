@@ -578,12 +578,10 @@ const { promises: fs } = __nccwpck_require__(747)
 async function run() {
     try {
         const path = core.getInput('path')
-        console.log(path)
 
         let content = await fs.readFile(path, 'utf8')
 
         const regexPattern = core.getInput('regex_pattern')
-        console.log(regexPattern)
         regex = new RegExp(regexPattern);
 
         const match = content.match(regex)
