@@ -17,7 +17,7 @@ async function run() {
             core.setFailed('The regex failed to match')
         }
     } catch(error) {
-        core.setFailed(`Action failed with error ${err}`);
+        core.setFailed(`Action failed with error ${error}`);
     }
 }
 

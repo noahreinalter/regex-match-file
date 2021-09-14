@@ -579,7 +579,7 @@ async function run() {
     try {
         const path = core.getInput('path')
         console.log(path)
-        let content = await fs.readFile(path, 'utf8')
+        let content = await fs.readFile('/github/workspace/' + path, 'utf8')
 
         const regexPattern = core.getInput('regex_pattern')
         console.log(regexPattern)
@@ -591,7 +591,7 @@ async function run() {
             core.setFailed('The regex failed to match')
         }
     } catch(error) {
-        core.setFailed(`Action failed with error ${err}`);
+        core.setFailed(`Action failed with error ${error}`);
     }
 }
 
