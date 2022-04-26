@@ -1,0 +1,25 @@
+name: Build
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+            node-version: '16'
+      - run: |
+          npm install
+          npm run build
+          npm run package
+          git config user.name "GitHub Actions Bot"
+          git config user.email "<>"
+          git add .
+          today=$(date +'%-d.%-m.%Y')
+          git diff-index --quiet HEAD || (git commit -m "Updated build file ${today}" && git push)
+      - name: Latest tag
+        uses: EndBug/latest-tag@v1.4.0
