@@ -15,7 +15,6 @@ jobs:
       - run: |
           npm install
           npm run build
-          npm run package
           git config user.name "GitHub Actions Bot"
           git config user.email "<>"
           git add .
