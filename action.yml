@@ -12,5 +12,5 @@ inputs:
     description: 'path of the file to search'
     required: true
 runs:
-  using: 'node12'
+  using: 'node16'
   main: 'dist/index.js'
