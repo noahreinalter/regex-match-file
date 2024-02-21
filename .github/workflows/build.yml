@@ -21,4 +21,4 @@ jobs:
           today=$(date +'%-d.%-m.%Y')
           git diff-index --quiet HEAD || (git commit -m "Updated build file ${today}" && git push)
       - name: Latest tag
-        uses: EndBug/latest-tag@v1.6.1
+        uses: EndBug/latest-tag@v1.6.2
