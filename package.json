@@ -16,7 +16,7 @@
   },
   "homepage": "https://github.com/noahreinalter/regex-match-file#readme",
   "dependencies": {
-    "@actions/core": "^1.11.1",
+    "@actions/core": "^2.0.1",
     "@vercel/ncc": "^0.38.4"
   }
 }
