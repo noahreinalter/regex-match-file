@@ -1,8 +1,9 @@
 {
   "name": "regex-match-file",
   "description": "",
-  "version": "1.10.2",
+  "version": "1.11.0",
   "main": "main.js",
+  "type": "module",
   "scripts": {
     "start": "node main.js",
     "build": "ncc build -m"
