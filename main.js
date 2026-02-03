@@ -1,25 +1,25 @@
-const core = require('@actions/core');
-const { promises: fs } = require('fs')
+import * as core from "@actions/core";
+import * as fs from "node:fs/promises";
 
 async function run() {
-    try {
-        const path = core.getInput('path')
+  try {
+    const path = core.getInput("path");
 
-        let content = await fs.readFile(path, 'utf8')
+    let content = await fs.readFile(path, "utf8");
 
-        const regexPattern = core.getInput('regex_pattern')
-        regex = new RegExp(regexPattern);
+    const regexPattern = core.getInput("regex_pattern");
+    regex = new RegExp(regexPattern);
 
-        const match = content.match(regex)
+    const match = content.match(regex);
 
-        if (match == null) {
-            core.setFailed('The regex failed to match')
-        } else {
-            console.log('Match found')
-        }
-    } catch(error) {
-        core.setFailed(`Action failed with error ${error}`);
+    if (match == null) {
+      core.setFailed("The regex failed to match");
+    } else {
+      console.log("Match found");
     }
+  } catch (error) {
+    core.setFailed(`Action failed with error ${error}`);
+  }
 }
 
-run()
+run();
