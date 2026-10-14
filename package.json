@@ -18,6 +18,6 @@
   "homepage": "https://github.com/noahreinalter/regex-match-file#readme",
   "dependencies": {
     "@actions/core": "^3.0.1",
-    "@vercel/ncc": "^0.44.0"
+    "@vercel/ncc": "^0.45.0"
   }
 }
